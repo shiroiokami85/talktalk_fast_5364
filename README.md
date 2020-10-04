@@ -26,20 +26,33 @@ Thanks to DavidBrent over at https://forum.openwrt.org/u/DavidBrent
 Disabling automatic updates, Disabling TR-069 since the GUI doesn't actually allow you too
 
 xmo-client -p "Device/ManagementServer/URL" -s ""
+
 xmo-client -p "Device/ManagementServer/TR69InternalData/Settings/Port" -s 0
 
 Turning bridge mode on lan port 1
 
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=1]/Ports/Port[@uid=2]/Enable" -s "false"
+
 xmo-client -p "Device/Bridging/Bridges" -a
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports" -a
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports" -a
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports" -a
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Enable" -s "true"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=1]/Enable" -s "true"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=1]/ManagementPort" -s "true"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=2]/Enable" -s "true"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=3]/Enable" -s "true"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=2]/LowerLayers" -s "Device/Ethernet/Interfaces/Interface[PHY1]"
+
 xmo-client -p "Device/Bridging/Bridges/Bridge[@uid=3]/Ports/Port[@uid=3]/LowerLayers" -s "Device/Ethernet/VLANTerminations/VLANTermination[VLAN_DATA]"
+
 xmo-client -p "Device/IP/Interfaces/Interface[@uid=2]/IPv4Addresses/IPv4Address[@uid=1]/Enable" -s "false"
